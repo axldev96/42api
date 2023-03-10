@@ -1,8 +1,11 @@
 :root {
-  --main-bg: linear-gradient(180deg, #5460f5 0%, #d2d2ff 100%);
+  --main-bg: linear-gradient(180deg, #bec5ff 0%, #c0ffe8 99.99%, #ffc1f1 100%);
   --body-bg: #202020;
-  --header-bg: linear-gradient(180deg, #ebd77f 0%, #ffeea4 100%);
-  --card-bg: #dd3311;
+  --header-bg: linear-gradient(
+    180deg,
+    #d57feb 0%,
+    rgba(255, 251, 210, 0.55) 100%
+  );
 }
 
 *,
@@ -47,14 +50,9 @@ header {
 .cards {
   padding: 2rem;
   gap: 2rem;
-  background-color: var(--card-bg);
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-}
-
-.card {
-  color: #202020;
 }
 
 .card.n_one {
@@ -98,11 +96,62 @@ header {
 
 .card a {
   display: block;
-  width: 20rem;
+  max-width: 20rem;
   border-radius: 50%;
 }
 
 .card a img {
   display: block;
   width: 100%;
+}
+
+/* Users list */
+
+.ulist {
+  background-color: red;
+  display: grid;
+}
+
+.ulist .cells .user {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.ulist .cells .user .col_number {
+  padding: 1rem 2rem;
+  border: 1px solid #000;
+  border-right: none;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+
+.ulist .cells .user .col_number img {
+  width: 100%;
+  max-width: 10rem;
+}
+
+.ulist .cells .user .col_number p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ulist .cells .user .col_number p .number {
+  font-size: 3rem;
+  color: #f2f2f2;
+}
+
+.ulist .cells .user .col_username {
+  border: 1px solid #000;
+  border-right: none;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ulist .cells .user .col_username {
+  color: #f2f2f2;
+  font-size: 3rem;
 }
