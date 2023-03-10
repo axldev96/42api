@@ -85,8 +85,7 @@ header {
 
 .card a {
   display: block;
-  border: 1px solid #000;
-  width: 3rem;
+  width: 20rem;
   border-radius: 50%;
 }
 
