@@ -1,0 +1,96 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: inherit;
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  background-color: #202020;
+  color: #e2e2e2;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.container {
+  background: linear-gradient(180deg, #5460f5 0%, #d2d2ff 100%);
+}
+
+.content {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 10%;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  padding: 4rem 6rem;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #ebd77f 0%, #ffeea4 100%);
+}
+
+.cards {
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #dd3311;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #e2e2e2;
+  color: #202020;
+}
+
+.card.n_one {
+  position: relative;
+  top: -4rem;
+}
+
+.card h2 {
+  font-size: 2.4rem;
+}
+
+.card p {
+  display: flex;
+  flex-direction: column;
+}
+
+.card p span {
+  font-size: 3rem;
+}
+
+.card.n_one p span {
+  color: red;
+  align-self: center;
+}
+
+.card.n_two p span {
+  color: green;
+  align-self: flex-end;
+}
+
+.card.n_three p span {
+  color: blue;
+}
+
+.card a {
+  display: block;
+  border: 1px solid #000;
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.card a img {
+  display: block;
+  width: 100%;
+}
