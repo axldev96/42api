@@ -1,10 +1,16 @@
 :root {
-  --main-bg: linear-gradient(180deg, #bec5ff 0%, #c0ffe8 99.99%, #ffc1f1 100%);
   --body-bg: #202020;
+  --main-bg: linear-gradient(180deg, #bec5ff 0%, #c0ffe8 99.99%, #ffc1f1 100%);
   --header-bg: linear-gradient(
     180deg,
     #d57feb 0%,
     rgba(255, 251, 210, 0.55) 100%
+  );
+  --user-list-bg: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #ffeec4 42.71%,
+    #fff7ae 100%
   );
 }
 
@@ -14,6 +20,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 html {
@@ -29,6 +37,10 @@ body {
   height: 100vh;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
   background: var(--main-bg);
 }
@@ -42,9 +54,30 @@ body {
 
 header {
   width: 100%;
-  padding: 4rem 6rem;
+  padding: 2rem 6rem;
   margin: 0 auto;
   background: var(--header-bg);
+  display: flex;
+  justify-content: space-between;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+
+header .logo h2 {
+  font-size: 4rem;
+  color: #fff;
+}
+
+header .about {
+  display: flex;
+  align-items: center;
+  font-size: 4rem;
+  color: #fff;
+  font-weight: 700;
 }
 
 .cards {
@@ -57,7 +90,7 @@ header {
 
 .card.n_one {
   position: relative;
-  top: -4rem;
+  /* top: -4rem; */
 }
 
 .card h2 {
@@ -108,27 +141,35 @@ header {
 /* Users list */
 
 .ulist {
-  background-color: red;
   display: grid;
+  border: 6px solid #000000;
+  box-shadow: 19px 19px 0px #000000;
+  background: var(--user-list-bg);
+  margin-top: 6rem;
 }
 
-.ulist .cells .user {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+.ulist .cells {
+  display: block;
+}
+
+@media (min-width: 840px) {
+  .ulist .cells .user {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
 }
 
 .ulist .cells .user .col_number {
   padding: 1rem 2rem;
-  border: 1px solid #000;
-  border-right: none;
+  border-right: 4px solid #000;
   display: flex;
   justify-content: center;
   gap: 10%;
 }
 
 .ulist .cells .user .col_number img {
-  width: 100%;
-  max-width: 10rem;
+  width: 6rem;
+  min-width: 4rem;
 }
 
 .ulist .cells .user .col_number p {
@@ -139,19 +180,53 @@ header {
 
 .ulist .cells .user .col_number p .number {
   font-size: 3rem;
-  color: #f2f2f2;
+  color: #fff;
 }
 
 .ulist .cells .user .col_username {
-  border: 1px solid #000;
-  border-right: none;
+  color: #fff;
+  border-right: 4px solid #000;
+  border-top: 4px solid black;
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 3rem;
 }
 
-.ulist .cells .user .col_username {
-  color: #f2f2f2;
-  font-size: 3rem;
+@media (min-width: 840px) {
+  .ulist .cells .user .col_username {
+    border-top: none;
+  }
+}
+
+.ulist .cells .user .col_info {
+  border-top: 4px solid black;
+  border-right: 4px solid black;
+}
+
+@media (min-width: 840px) {
+  .ulist .cells .user .col_info {
+    border: none;
+  }
+}
+
+.ulist .cells .user .wallet_points {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+.ulist .cells .user .wallet_points img {
+  width: 5rem;
+  max-width: 8rem;
+}
+
+.ulist .cells .user .wallet_points p {
+  font-size: 4rem;
+  color: #fff;
 }
