@@ -1,3 +1,10 @@
+:root {
+  --main-bg: linear-gradient(180deg, #5460f5 0%, #d2d2ff 100%);
+  --body-bg: #202020;
+  --header-bg: linear-gradient(180deg, #ebd77f 0%, #ffeea4 100%);
+  --card-bg: #dd3311;
+}
+
 *,
 *:after,
 *:before {
@@ -13,14 +20,14 @@ html {
 }
 
 body {
-  background-color: #202020;
+  background-color: var(--body-bg);
   color: #e2e2e2;
   font-family: sans-serif;
   height: 100vh;
 }
 
 .container {
-  background: linear-gradient(180deg, #5460f5 0%, #d2d2ff 100%);
+  background: var(--main-bg);
 }
 
 .content {
@@ -34,20 +41,19 @@ header {
   width: 100%;
   padding: 4rem 6rem;
   margin: 0 auto;
-  background: linear-gradient(180deg, #ebd77f 0%, #ffeea4 100%);
+  background: var(--header-bg);
 }
 
 .cards {
   padding: 2rem;
   gap: 2rem;
-  background-color: #dd3311;
+  background-color: var(--card-bg);
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
 .card {
-  background-color: #e2e2e2;
   color: #202020;
 }
 
@@ -57,7 +63,8 @@ header {
 }
 
 .card h2 {
-  font-size: 2.4rem;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .card p {
@@ -65,22 +72,28 @@ header {
   flex-direction: column;
 }
 
-.card p span {
-  font-size: 3rem;
+.card p .number {
+  color: #fff;
+  font-weight: 700;
+  font-size: 4rem;
 }
 
 .card.n_one p span {
-  color: red;
   align-self: center;
 }
 
 .card.n_two p span {
-  color: green;
   align-self: flex-end;
+  margin-right: 4rem;
 }
 
 .card.n_three p span {
-  color: blue;
+  margin-left: 4rem;
+}
+
+.card.n_two h2,
+.card.n_three h2 {
+  text-align: center;
 }
 
 .card a {
